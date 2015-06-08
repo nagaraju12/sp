@@ -8,7 +8,11 @@ resources :articles do
   resources :comments
 end
   resources :categories
-  resources :products
+  resources :products do 
+    collection do
+      get :product_images
+    end
+  end
   devise_for :admins
   resources :students
   devise_for :users
