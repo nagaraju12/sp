@@ -27,7 +27,12 @@ end
 def new
   @order = Order.new(:express_token => params[:token])
 end
-
+ def order_images
+    @orders = Order.all
+    respond_to do |format|
+      format.js
+    end
+  end
 
   # GET /orders/1/edit
   def edit

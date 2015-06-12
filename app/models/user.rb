@@ -9,5 +9,20 @@ class User < ActiveRecord::Base
   has_many :products
   def comments_moderator? comment
     id == comment.holder_id
+     include TheComments::User
+
+  has_many :products
+
+  def admin?
+    self == User.first
+  end
+
+  def comments_admin?
+    admin?
+  end
+
+  def comments_moderator? comment
+    id == comment.holder_id
+  end
   end
 end

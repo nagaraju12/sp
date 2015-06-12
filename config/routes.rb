@@ -1,19 +1,23 @@
 Rails.application.routes.draw do
-  resources :articles
-  resources :orders
-  resources :line_items
-  resources :comments
-  resources :carts
-resources :articles do
+  resources :articles do
   resources :comments
 end
-  resources :categories
+
+  resources :carts, :line_items, :categories
+
+  resources :orders do
+    collection do
+        get :order_images
+      end
+    end
+  
   resources :products do 
+  resources :comments
     collection do
       get :product_images
     end
   end
-  devise_for :admins
+
   resources :students
   devise_for :users
   resources :line_items
@@ -27,12 +31,12 @@ end
       get :success
     end
   end
+  
   get 'store/index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 resources :images
- concern   :user_comments,  TheComments::UserRoutes.new
-  resources :comments, concerns:  [:user_comments]
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 root 'store#index'

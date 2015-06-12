@@ -20,7 +20,6 @@
   <%= @order.pay_type %>
 </p>
 <% form_for @order do |f| %>
-  <%= f.error_messages %>
   <% if @order.express_token.blank? %>
     ...
   <% else %>

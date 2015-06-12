@@ -18,19 +18,22 @@
           <h1><%= image_tag("shikshan-logo.png") %></h1>
           <div id="user-navigation">
             <ul class="wat-cf">
-              <% if current_user.present? %>
+             <% if current_user.present? %>
                 <li><%= link_to "sign out",  destroy_user_session_path(), :method => :delete %></li>
                 <li><%=  link_to "categories", new_category_path() %></li>
                 <li><%= link_to "carts",  new_cart_path() %></li>
                 <li><%= link_to "products",  new_product_path() %></li>
                 <li><%= link_to "orders", new_order_path() %></li> 
               <% else %>
-                <li><%= link_to"store", store_index_path()  %>
+                <li><%= link_to "store", store_index_path()  %>
                 <li><%= link_to "product all",  product_images_products_path(), :remote => true %></li>
+                <li><%= link_to "order all",  order_images_orders_path(), :remote => true %></li>
+
                 <li><%= link_to "Sign up", new_user_registration_path() %></li>
                 <li><%= link_to "sign_in", new_user_session_path() %></li>
+
                 <li><%= link_to "confirmation",  new_user_confirmation_path() %></li>
-                <li><%= link_to "students",  new_student_path() %></li>
+                <li><%= link_to "articles", new_article_path() %></li>
               <% end %>
 
             </ul>
