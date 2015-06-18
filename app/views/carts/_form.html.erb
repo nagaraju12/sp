@@ -10,7 +10,18 @@
       </ul>
     </div>
   <% end %>
+   <div class="field">
+    <%= f.label :product_id %><br>
+    <%= f.text_field :product_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cart_id %><br>
+    <%= f.text_field :cart_id %>
+  </div>
+  
+  <%= text_field_tag 'quantity' %>
   <div class="actions">
     <%= f.submit %>
   </div>
+  
 <% end %>

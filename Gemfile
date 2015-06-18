@@ -1,11 +1,11 @@
- source 'https://rubygems.org'
+source 'https://rubygems.org'
 gem 'devise'
 gem 'paperclip'
 gem 'will_paginate', '~> 3.0.6'
 gem "paperclip-ffmpeg", "~> 1.0.1"
 gem 'pg'
 gem 'contact_us', '~> 1.0.1'
-   gem "the_comments", "~> 2.2.1" 
+gem "the_comments", "~> 2.2.1" 
 gem 'web-app-theme'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
