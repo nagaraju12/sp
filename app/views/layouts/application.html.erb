@@ -13,6 +13,8 @@
         <div id="banner">
           <%= image_tag("shi-logo-3.png") %>
         </div>
+<p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
 
         <div id="header">
           <h1><%= image_tag("shikshan-logo.png") %></h1>
@@ -25,9 +27,7 @@
                 <li><%= link_to "products",  new_product_path() %></li>
                 <li><%= link_to "orders", new_order_path() %></li> 
               <% else %>
-                <li><%= link_to "store", store_index_path()  %>
-                <li><%= link_to "product all",  product_images_products_path(), :remote => true %></li>
-
+               <li><%= link_to "store",   store_index_path() %>
                 <li><%= link_to "Sign up", new_user_registration_path() %></li>
                 <li><%= link_to "sign_in", new_user_session_path() %></li>
 

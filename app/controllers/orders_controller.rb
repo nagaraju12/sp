@@ -140,6 +140,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :address, :email, :pay_type ,:express)
+      params.require(:order).permit(:name, :gender_type, :address, :email, :password, :accno, :pay_type ,:express)
     end
 end

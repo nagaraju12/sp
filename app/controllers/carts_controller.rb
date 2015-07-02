@@ -70,7 +70,7 @@ rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cart_params
-      params[:cart]
+      params[:cart].permit(:product_id, :cart_id)
     end
     def invalid_cart
 logger.error "Attempt to access invalid cart #{params[:id]}"

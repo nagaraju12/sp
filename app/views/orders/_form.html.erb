@@ -16,6 +16,18 @@
 <%= f.text_field :name, size: 40 %>
 </div>
 <div class="field">
+<%= f.label :gender_type %><br>
+<%= f.select :gender_type, Order::GENDER_TYPES, prompt: 'Select a gender method' %>
+</div>
+<div class="field">
+<%= f.label :accno %><br>
+<%= f.text_field :accno %>
+</div>
+<div class="field">
+<%= f.label :password %><br>
+<%= f.password_field :password %>
+</div>
+<div class="field">
 <%= f.label :address %><br>
 <%= f.text_area :address, rows: 3, cols: 40 %>
 </div>
@@ -23,13 +35,14 @@
 <%= f.label :email %><br>
 <%= f.email_field :email, size: 40 %>
 </div>
+
 <div class="field">
 <%= f.label :pay_type %><br>
 <%= f.select :pay_type, Order::PAYMENT_TYPES,
 prompt: 'Select a payment method' %>
 </div>
 <div class="actions">
-<%= f.submit 'Place Order' %>
+<%= f.submit  'Place Order' %>
 
   </div>
 <% end %>

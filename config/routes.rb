@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :articles do
   resources :comments
 end
-
+resources :dashboards
   resources :carts, :line_items, :categories
 
   resources :orders do

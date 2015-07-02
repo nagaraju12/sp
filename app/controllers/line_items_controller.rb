@@ -1,7 +1,7 @@
 class LineItemsController < ApplicationController
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
-
 before_action :set_cart, only: [:create]
+
   # GET /line_items
   # GET /line_items.json
   def index
@@ -25,16 +25,14 @@ before_action :set_cart, only: [:create]
   # POST /line_items
   # POST /line_items.json
   def create
-    product = Product.find(params[:product_id])
+product = Product.find(params[:product_id])
 @line_item = @cart.add_product(product.id)
-
 respond_to do |format|
 if @line_item.save
 format.html { redirect_to @line_item.cart,
 notice: 'Line item was successfully created.' }
 format.json { render action: 'show', status: :created, location: @line_item }
 format.js{ @current_item = @line_item }
-
 else
 format.html { render action: 'new' }
 format.json { render json: @line_item.errors,

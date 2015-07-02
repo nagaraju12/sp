@@ -6,14 +6,14 @@ class ProductsController < ApplicationController
   def index
     @products = Product.paginate(page: params[:page], per_page: 2)
   end
-  
+
   def product_images
     @products = Product.all
     respond_to do |format|
       format.js
     end
   end
-
+  
   # GET /products/1
   # GET /products/1.json
   def show
@@ -32,7 +32,6 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
