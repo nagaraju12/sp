@@ -19,31 +19,6 @@
   <strong>Category:</strong>
   <%= @product.category_id %>
 </p>
-<h2>Comments</h2>
-<% @product.comments.each do |comment| %>
-  <p>
-    <strong>Commenter:</strong>
-    <%= comment.commenter %>
-  </p>
- 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-<% end %>
- <h2>Add a comment:</h2>
-<%= form_for([@product, @product.comments.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+
 <%= link_to 'Edit', edit_product_path(@product) %> 
 <%= link_to 'Back', products_path %>

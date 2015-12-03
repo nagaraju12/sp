@@ -37,8 +37,8 @@ config.action_controller.perform_caching = false
     :address              => "smtp.gmail.com",
     :port                 => 587,
     #:domain               => 'baci.lindsaar.net',
-    :user_name            => 'kammaranagaraju@gmail.com',
-    :password             => 'Nagaraju@2015', #'dinemedia!@#',
+    :user_name            => '',
+    :password             => '15', #'dinemedia!@#',
     :authentication       => 'plain',
     :enable_starttls_auto => true
   }

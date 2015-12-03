@@ -64,12 +64,12 @@ ActiveRecord::Schema.define(version: 20150623065819) do
   create_table "comments", force: :cascade do |t|
     t.string   "commenter",  limit: 255
     t.text     "body",       limit: 65535
-    t.integer  "product_id", limit: 4
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "article_id", limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
-  add_index "comments", ["product_id"], name: "index_comments_on_product_id", using: :btree
+  add_index "comments", ["article_id"], name: "index_comments_on_article_id", using: :btree
 
   create_table "dashboards", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -170,6 +170,7 @@ ActiveRecord::Schema.define(version: 20150623065819) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "comments", "articles"
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "products"
